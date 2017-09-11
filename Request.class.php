@@ -5,7 +5,7 @@ namespace YouDaoTranslateApi;
 /**
  * Class Request
  * @package YouDaoTranslateApi
- * @author csun@hillinsight.com
+ * @author Sch0ng@163.com
  */
 class Request
 {

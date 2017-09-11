@@ -7,7 +7,7 @@ require '/data/laboratory/script/YouDaoTranslateApi/Request.class.php';
 /**
  * Class Translate
  * @package YouDaoTranslateApi
- * @author csun@hillinsight.com
+ * @author Sch0ng@163.com
  */
 class Translate
 {
