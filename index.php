@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . './translate/Autoload.class.php';
+require __DIR__ . '/translate/Autoload.class.php';
 $base_path = __DIR__;
 
 Autoload::register($base_path);
