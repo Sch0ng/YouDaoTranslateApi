@@ -1,8 +1,6 @@
 <?php
 
-namespace YouDaoTranslateApi;
-
-require '/data/laboratory/script/YouDaoTranslateApi/Request.class.php';
+namespace YouDaoTranslateApi\translate\utils;
 
 /**
  * Class Translate
@@ -130,4 +128,3 @@ class Translate
     }
 }
 
-(new Translate())->run($argv);

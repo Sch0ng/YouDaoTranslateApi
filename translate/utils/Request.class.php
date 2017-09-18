@@ -1,6 +1,6 @@
 <?php
 
-namespace YouDaoTranslateApi;
+namespace YouDaoTranslateApi\translate\utils;
 
 /**
  * Class Request
