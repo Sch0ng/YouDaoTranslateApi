@@ -10,7 +10,7 @@
 2. 设置命令别名
     ```
     vim ~/.bashrc
-    alias t='/usr/local/bin/php /YourLocalPath/YouDaoTranslateApi/index.php'
+    alias t='/usr/bin/php /pathto/YouDaoTranslateApi/index.php'
     source ~/.bashrc
     ```
 3. 使用方法
@@ -55,4 +55,5 @@
     - 俄文
     - 西班牙文
     - 葡萄牙文
+- shell脚本一键安装待支持
 - 仅支持类Linux系统使用
