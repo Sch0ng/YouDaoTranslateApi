@@ -37,7 +37,7 @@ class Translate
     private function parser($result)
     {
         //0. 英文
-        $query = $result['query'] ? $result['query'] : '';
+        $query = isset($result['query']) ? $result['query'] : '';
         echo '英文:' . $result['query'] . PHP_EOL;
 
         //2. 常用翻译
