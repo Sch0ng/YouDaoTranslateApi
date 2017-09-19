@@ -38,7 +38,7 @@ class Translate
     {
         //0. 英文
         $query = isset($result['query']) ? $result['query'] : '';
-        echo '英文:' . $result['query'] . PHP_EOL;
+        echo '英文:' . $query . PHP_EOL;
 
         //2. 常用翻译
         echo '翻译:' . implode(', ', $result['translation']) . PHP_EOL;
