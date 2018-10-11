@@ -105,7 +105,11 @@ class Translate
                 $list = [$query => 1];
             } else {
                 $list = json_decode($list,1);
-                $list[$query] += 1;
+                if(isset($list[$query])){
+                    $list[$query] += 1;
+                }else{
+                    $list[$query] = 1;
+                }
             }
             arsort($list);
             file_put_contents($file, json_encode($list));
