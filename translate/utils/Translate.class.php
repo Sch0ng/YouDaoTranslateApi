@@ -46,6 +46,7 @@ class Translate
         //3. 详细释义
         if (isset($result['basic'])) {
             echo '释义:' . PHP_EOL;
+            self::saveQuery($query);
             foreach ($result['basic']['explains'] as $value) {
                 echo self::TABLE1 . $value . PHP_EOL;
             }
@@ -79,9 +80,9 @@ class Translate
 
             foreach ($result['web'] as $value) {
                 $key_length = strlen($value['key']);
-                $offset  = $max_length-$key_length;
+                $offset = $max_length - $key_length;
                 $blank = '';
-                if($offset > 0){
+                if ($offset > 0) {
                     $blank = str_pad($blank, $offset, ' ');
                 }
                 echo self::TABLE1 . $value['key'] . ':' . $blank;
@@ -89,7 +90,26 @@ class Translate
             }
         }
 
+    }
 
+    private static function saveQuery($query = '')
+    {
+        global $base_path;
+        $file = $base_path . '/translate/data/' . $query[0] . '.txt';
+        if (!file_exists($file)) {
+            fopen($file, 'w');
+        }
+        if (preg_match('/[a-zA-Z]+/', $query)) {
+            $list = file_get_contents($file);
+            if (empty($list)) {
+                $list = [$query => 1];
+            } else {
+                $list = json_decode($list,1);
+                $list[$query] += 1;
+            }
+            arsort($list);
+            file_put_contents($file, json_encode($list));
+        }
     }
 
     private function englishToChinestDemo()
@@ -128,4 +148,3 @@ class Translate
         ];
     }
 }
-
