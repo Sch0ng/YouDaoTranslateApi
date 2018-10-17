@@ -95,19 +95,19 @@ class Translate
     private static function saveQuery($query = '')
     {
         global $base_path;
-        $file = $base_path . '/translate/data/' . $query[0] . '.txt';
-        if (!file_exists($file)) {
-            fopen($file, 'w');
-        }
-        if (preg_match('/[a-zA-Z]+/', $query)) {
+        if (preg_match('/^[a-zA-Z]+/', $query)) {
+            $file = $base_path . '/translate/data/' . $query[0] . '.txt';
+            if (!file_exists($file)) {
+                fopen($file, 'w');
+            }
             $list = file_get_contents($file);
             if (empty($list)) {
                 $list = [$query => 1];
             } else {
-                $list = json_decode($list,1);
-                if(isset($list[$query])){
+                $list = json_decode($list, 1);
+                if (isset($list[$query])) {
                     $list[$query] += 1;
-                }else{
+                } else {
                     $list[$query] = 1;
                 }
             }
